@@ -11,7 +11,7 @@
 |
 */
 //Route with alias
-Route::get('/', ['as'=>'home', 'uses'=>'IndexController@show' ]);
+Route::get('/', ['uses'=>'IndexController@show', 'middleware'=>'auth' ]);
 
 Route::get('/page/{id?}', function ($id = null) {
     echo $id;
@@ -63,3 +63,8 @@ Route::get('/about', ['uses'=>'AboutController@show', 'as'=>"AboutUs"]);
 //-------------------------------------------------------------------------
 
 Route::get('/articles', ['uses'=>"Core@getArticles"]);
+Auth::routes();
+
+Route::any('/home', 'HomeController@index')->name('home');
+
+

@@ -109,8 +109,17 @@ class Core extends Controller
 
         /*$user = User::find(1);
         dump($user->roles);*/
-        $role = Role::find(1);
-        dump($role->users);
+        /*$role = Role::find(1);
+        dump($role->users);*/
+        /*//Жадная загрузка
+        $articles = Article::with('user')->get();//$articles = Article::all(); $articles->load('user');
+        foreach($articles as $article){
+            echo $article->user->name.'<br/>';
+        }
+        dump($articles);*/
+
+        $users = User::has('articles')->get();
+        dump($users);
 
         
 
