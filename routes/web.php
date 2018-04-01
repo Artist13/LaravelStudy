@@ -60,3 +60,6 @@ Route::get('/test',['uses'=>'Admin\ContactController@show']);
 Route::post('/test', ['uses'=>"Admin\ContactController@post"]);
 
 Route::get('/about', ['uses'=>'AboutController@show', 'as'=>"AboutUs"]);
+//-------------------------------------------------------------------------
+
+Route::get('/articles', ['uses'=>"Core@getArticles"]);

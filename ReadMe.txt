@@ -57,3 +57,9 @@
 41. Для передачи объекта на скачивание использовать метод класса response download($file, $name , $headers[], $disposition)
 42. RedirectResponse('/target') производет редирект на указанный адрес
 43. Или RderiectResponse::create('/target')
+44. Можно использовать back() для возврата на предыдущую страницу
+45. redirect()-route('home') redirect()->action('Controller@method')
+46. В AppServiceProvider в методе boot можно добавить свои ответы
+    Response::macro  ('name', function(){
+        //some code
+    });
